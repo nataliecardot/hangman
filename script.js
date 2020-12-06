@@ -38,7 +38,12 @@ function displayWord() {
 }
 
 // Update wrong letters
-function updateWrongLettersEl() {}
+function updateWrongLettersEl() {
+  wrongLettersEl.innerHTML = `
+    ${wrongLetters.length > 0 ? '<p>Wrong</p>' : ''}
+    ${wrongLetters.map((letter) => `<span> ${letter}</span>`)}
+  `;
+}
 
 // Show notification
 function showNotification() {
