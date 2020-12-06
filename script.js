@@ -98,4 +98,19 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+// Restart game
+playAgainBtn.addEventListener('click', () => {
+  // Empty correct and wrong letter arrays
+  correctLetters.splice(0);
+  wrongLetters.splice(0);
+
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+
+  displayWord();
+
+  updateWrongLettersEl();
+
+  popup.style.display = 'none';
+});
+
 displayWord();
