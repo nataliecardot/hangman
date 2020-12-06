@@ -122,9 +122,6 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Enter button press
-// If popup is displayed (won or lost), restart game on click
-
 function gameRestart() {
   // Empty correct and wrong letter arrays
   correctLetters.splice(0);
@@ -139,9 +136,18 @@ function gameRestart() {
   popup.style.display = 'none';
 }
 
-// Restart game
+// Restart game on play button click
 playAgainBtn.addEventListener('click', () => {
   gameRestart();
+});
+
+// If popup is displayed (won or lost), restart game on enter
+window.addEventListener('keydown', (e) => {
+  if (e.code == 'Enter') {
+    if (popup.style.display == 'flex') {
+      gameRestart();
+    }
+  }
 });
 
 displayWord();
