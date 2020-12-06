@@ -37,4 +37,39 @@ function displayWord() {
   }
 }
 
+// Update wrong letters
+function updateWrongLettersEl() {}
+
+// Show notification
+function showNotification() {}
+
+// Keydown letter press
+window.addEventListener('keydown', (e) => {
+  // There are keycodes (actually now keyCode is deprecated; replaced with property `code`) on event parameter that's passed in. Letters go from a, 65, to z, 90
+  if (e.code >= 65 && e.code <= 90) {
+    const letter = e.key;
+
+    if (selectedWord.includes(letter)) {
+      if (!correctLetters.includes(letter)) {
+        correctLetters.push(letter);
+
+        // Update word element to show new letter
+        displayWord();
+      }
+      // If letter is correct but already used
+    } else {
+      showNotification();
+    }
+    // Letter not in word
+  } else {
+    if (!wrongLetters.includes(letter)) {
+      wrongLetters.push(letter);
+
+      updateWrongLettersEl();
+    } else {
+      showNotification();
+    }
+  }
+});
+
 displayWord();
