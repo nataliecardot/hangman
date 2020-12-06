@@ -49,8 +49,9 @@ function showNotification() {
 
 // Keydown letter press
 window.addEventListener('keydown', (e) => {
-  // There are keycodes (actually now keyCode is deprecated; replaced with property `code`) on event parameter that's passed in. Letters go from a, 65, to z, 90
-  if (e.code >= 65 && e.code <= 90) {
+  // Note: keyCode now deprecated; replaced with `code`
+  // console.log(e.code);
+  if (e.code >= 'KeyA' && e.code <= 'KeyZ') {
     const letter = e.key;
 
     if (selectedWord.includes(letter)) {
