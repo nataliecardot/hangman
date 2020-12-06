@@ -72,6 +72,9 @@ function updateWrongLettersEl() {
 
     if (index < errors) {
       part.style.display = 'block';
+    } else {
+      // This is needed to hide parts after game restart
+      part.style.display = 'none';
     }
   });
 
@@ -119,8 +122,10 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Restart game
-playAgainBtn.addEventListener('click', () => {
+// Enter button press
+// If popup is displayed (won or lost), restart game on click
+
+function gameRestart() {
   // Empty correct and wrong letter arrays
   correctLetters.splice(0);
   wrongLetters.splice(0);
@@ -132,6 +137,11 @@ playAgainBtn.addEventListener('click', () => {
   updateWrongLettersEl();
 
   popup.style.display = 'none';
+}
+
+// Restart game
+playAgainBtn.addEventListener('click', () => {
+  gameRestart();
 });
 
 displayWord();
