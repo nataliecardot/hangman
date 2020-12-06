@@ -1,6 +1,6 @@
 const wordEl = document.getElementById('word');
 const wrongLettersEl = document.getElementById('wrong-letters');
-const playAgainBtn = document.getElementById('play-again');
+const playAgainBtn = document.getElementById('play-button');
 const popup = document.getElementById('popup-container');
 const notification = document.getElementById('notification-container');
 const finalMessage = document.getElementById('final-message');
@@ -59,19 +59,19 @@ window.addEventListener('keydown', (e) => {
 
         // Update word element to show new letter
         displayWord();
+      } else {
+        // If letter is correct but already used
+        showNotification();
       }
-      // If letter is correct but already used
+      // Letter not in word
     } else {
-      showNotification();
-    }
-    // Letter not in word
-  } else {
-    if (!wrongLetters.includes(letter)) {
-      wrongLetters.push(letter);
+      if (!wrongLetters.includes(letter)) {
+        wrongLetters.push(letter);
 
-      updateWrongLettersEl();
-    } else {
-      showNotification();
+        updateWrongLettersEl();
+      } else {
+        showNotification();
+      }
     }
   }
 });
