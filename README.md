@@ -4,8 +4,8 @@ Select a letter to figure out a hidden word in a set amount of chances. Created 
 
 ## Project Specifications
 
-- Display hangman pole and figure using SVG
-- Generate a random word
+- Display hangman scaffold and figure using SVG
+- Generate random word
 - Display word in UI with correct letters
 - Display wrong letters
 - Show notification when a letter is selected twice
