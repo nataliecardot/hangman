@@ -7,7 +7,28 @@ const finalMessage = document.getElementById('final-message');
 
 const figureParts = document.querySelectorAll('.figure-part');
 
-const words = ['application', 'programming', 'javascript', 'magic'];
+const words = [
+  'application',
+  'programming',
+  'javascript',
+  'coding',
+  'internet',
+  'computer',
+  'syntax',
+  'refactoring',
+  'browser',
+  'application',
+  'lambda',
+  'function',
+  'interface',
+  'class',
+  'object',
+  'loop',
+  'promise',
+  'fetch',
+  'library',
+  'framework',
+];
 
 let selectedWord = words[Math.floor(Math.random() * words.length)];
 
